@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('shop.static', filename='css/style.css') }}"> 
+{% endblock %}
+
+{% block title %}
+   Shop page
+{% endblock %}
+
+{% block body %}
+
+    <div class="menu">
+        <a href="/home_user">HOME</a>
+        <a href="/shop" style="text-decoration: underline; font-weight: bold; text-underline-position: under;">SHOP</a>
+        <a href="/cart">CART</a>
+        <p id="one">0</p>
+        <div class="number"></div>
+        <a href="/contacts">CONTACTS</a>
+        <p class="username">{{ login[-1]['login'] }}</p>
+    </div>
+
+    <div id="main">
+        {% for product in products %}
+            <div class="product">
+                <div class="center">
+                    <div class="product-cover" style="background-image: url( {{ url_for('shop.static', filename='img/Iphone.jpg') }} );"></div>
+                </div>
+                <div id="hr"></div>
+                <div>
+                    <h1 class="product-name">{{ products.name }}</h1>
+                    <s class="product-price">{{ products.price }}</s>
+                    <dt class="discount">{{ products.discount }}</dt>
+                    <h2 class="product-price-with-discount">4999</h2>
+                    <button class="buy" id="button1">КУПИТИ</button>
+                    <p>ЄМНІСТЬ:</p>
+                    <div class="product-size">
+                        <p style="background-color: #EFCB4A;">256 гб</p>
+                        <p>512 гб</p>
+                        <p>1 тб</p>
+                    </div>
+                    <div class="product-is-avaliable">
+                        <img style="width: 34px; height: 34px; margin: 10px;" src="{{ url_for('shop.static', filename='img/Confirm.png') }}">
+                        <p style="font-size: 15px;">ТОВАР В НАЯВНОСТІ</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <!--<div class="product">
+            <div class="center">
+                <div class="product-cover" style="background-image: url( {{ url_for('shop.static', filename='img/Iphone.jpg') }} );"></div>
+            </div>
+            <div id="hr"></div>
+            <div>
+                <h1 class="product-name">iPhone 15 Pro Max 512GB Natural Titanium</h1>
+                <s class="product-price">50000 грн</s>
+                <dt class="discount">Знижка 10%</dt>
+                <h2 class="product-price-with-discount">49999 грн</h2>
+                <button class="buy" id="button2">КУПИТИ</button>
+                <p>ЄМНІСТЬ:</p>
+                <div class="product-size">
+                    <p style="background-color: #EFCB4A;">512 гб</p>
+                    <p>512 гб</p>
+                    <p>1 тб</p>
+                </div>
+                <div class="product-is-avaliable">
+                    <img style="width: 34px; height: 34px; margin: 10px;" src="{{ url_for('shop.static', filename='img/Confirm.png') }}">
+                    <p style="font-size: 15px;">ТОВАР В НАЯВНОСТІ</p>
+                </div>
+            </div>
+        </div>
+
+         
+        <div class="product">
+            <div class="center">
+                <div class="product-cover" style="background-image: url( {{ url_for('shop.static', filename='img/Iphone.jpg') }} );"></div>
+            </div>
+            <div id="hr"></div>
+            <div>
+                <h1 class="product-name">iPhone 15 Pro Max 1TB Natural Titanium</h1>
+                <s class="product-price">50000 грн</s>
+                <dt class="discount">Знижка 10%</dt>
+                <h2 class="product-price-with-discount">49999 грн</h2>
+                <button class="buy" id="button3">КУПИТИ</button>
+                <p>ЄМНІСТЬ:</p>
+                <div class="product-size">
+                    <p style="background-color: #EFCB4A;">1TB</p>
+                    <p>512 гб</p>
+                    <p>1 тб</p>
+                </div>
+                <div class="product-is-avaliable">
+                    <img style="width: 34px; height: 34px; margin: 10px;" src="{{ url_for('shop.static', filename='img/Confirm.png') }}">
+                    <p style="font-size: 15px;">ТОВАР В НАЯВНОСТІ</p>
+                </div>
+            </div>
+        </div>-->
+    </div>
+    <script src="{{ url_for('shop.static', filename='js/minus.js') }}"></script> 
+    <script src="{{ url_for('shop.static', filename='js/main.js') }}"></script> 
+{% endblock %}

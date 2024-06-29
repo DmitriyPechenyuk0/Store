@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{{ url_for('admin.static', filename='css/admin.css') }}">
+
+<script src="{{ url_for('admin.static', filename='js/admin.js') }}" defer></script>
+
+{% endblock %}
+
+{% block title %}
+Admin
+{% endblock %}
+
+{% block body %}
+    
+<div class="menu">
+    <a href="/home_user">HOME</a>
+    <a href="/shop">SHOP</a>
+    <a href="/cart">CART</a>
+    <p id="one">0</p>
+    <div class="number"></div>
+    <a href="/contacts">CONTACTS</a>
+    <a href="/admin" style="text-decoration: underline; font-weight: bold; text-underline-position: under;">ADMIN</a>
+    <p class="username">{{ login[-1]['login'] }}</p>
+</div>
+
+<div id="main">
+    <button id="addproduct" class="add-product" style="background-image: url({{ url_for('admin.static', filename='image/plus.png') }});">Додати продукт</button>
+    {% for product in products %}
+        <div class="product">
+            <div class="center">
+                <div class="product-cover" style="background-image: url( {{ url_for('shop.static', filename='img/Iphone.jpg') }} );"></div>
+                <img class="edit-img"  id="{{ product.id }}" src="{{ url_for('admin.static', filename='image/frame.png') }}">
+            </div>
+            <div id="hr"></div>
+            <div>
+                <div style="display: flex; align-items: center;">
+                    <h1 class="product-name" style="align-items: start; justify-content: start;">{{ product.name }}</h1>
+                    <img class="edit-name" style="margin-left: 12px; width: 31px; height: 31px;" id="{{ product.id }}" src="{{ url_for('admin.static', filename='image/frame.png') }}">
+                </div>
+                <div class="center" style="width: 200px;">
+                    <s class="product-price">{{ product.price }} грн</s>
+                    <img class="edit-price" id="{{ product.id }}" src="{{ url_for('admin.static', filename='image/frame.png') }}" style="margin-left: 40px;">
+                </div>
+                <div class="center" style="width: 200px;">
+                    <dt class="discount">Знижка {{ product.discount }}%</dt>
+                    <img class="edit-discount" id="{{ product.id }}" src="{{ url_for('admin.static', filename='image/frame.png') }}" style="margin-left: 40px;">
+                </div>
+                <h2 class="product-price-with-discount">49999 грн</h2>
+                <button class="buy" id="button1">КУПИТИ</button>
+                <p>ЄМНІСТЬ:</p>
+                <div class="product-size">
+                    <p style="background-color: #EFCB4A;">256 гб</p>
+                    <img class="edit-button" src="{{ url_for('admin.static', filename='image/frame.png') }}">
+                    <p>512 гб</p>
+                    <img class="edit-button" src="{{ url_for('admin.static', filename='image/frame.png') }}">
+                    <p>1 тб</p>
+                    <img class="edit-button" src="{{ url_for('admin.static', filename='image/frame.png') }}">
+                </div>
+                <div class="product-is-avaliable">
+                    <img style="width: 34px; height: 34px; margin: 10px;" src="{{ url_for('shop.static', filename='img/Confirm.png') }}">
+                    <p style="font-size: 15px;">ТОВАР В НАЯВНОСТІ</p>
+                </div>
+                <!--<form>
+                    <button type="submit">ВИДАЛИТИ ТОВАР</button>
+                </form>-->
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- IMAGE|TEXT FORM -->
+<div class= "modal-window" style="display: none;">
+    <form method="post" enctype="multipart/form-data" class="modal-form">
+        <div class="decoration-div">
+            <p id="change-image">CHANGE <span id="p-text"></span>:</p>
+            <input type="" name="" accept="" class="input-data" placeholder="">
+            <button type="submit" name="submit-change" class="submit-change" value="">SEND</button>
+        
+        </div>
+
+    </form>
+</div>
+
+<!-- NEW PRODUCT FORM -->
+
+<div class= "modal-window-new" style="display: none;">
+    <form method="post" enctype="multipart/form-data" class="modal-form" name="new-product-form" >
+            
+            <h1 class="new-product">NEW PRODUCT</h1>
+
+            <p id="change-image">CHANGE IMAGE:</p>
+            <input type="file" name="image" accept="image\*" class="input-data" placeholder="">
+
+            <p class="other-p">NAME PRODUCT:</p>
+            <input type="text" name = 'name' class="name">
+
+            <p class="other-p" >DESCRIPTION PRODUCT:</p>
+            <textarea name = 'description' class="description"></textarea>
+
+            <p class="other-p" >PRICE PRODUCT:</p>
+            <input type="text" name = 'price' class="price">
+
+            <p class="other-p" >DISCOUNT PRODUCT:</p>
+            <input type="text" name = 'discount' class="discount">
+
+            <p class="other-p" >COUNT PRODUCT:</p>
+            <input type="text" name = 'count' class="count">
+
+            <button type="submit" name="submit-new-change" class="submit-change" value="">SEND</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('home.static', filename='css/home_user.css') }}">
+{% endblock %}
+
+{% block title %}
+    Page Home User
+{% endblock %}
+
+{% block body %}
+
+<h1 class="main">HOME PAGE</h1>
+
+<div class="menu">
+
+    <a class="home" href="/home_user">HOME</a>
+    
+    <a class="other" href="/shop">SHOP</a>
+
+    <a class="other" href="/cart">CART</a>
+    
+    <a class="other" href="/contacts">CONTACTS</a>
+
+    <a class="other" href="/admin">ADMIN</a>
+
+    <p class="username">{{ login[-1]['login'] }}</p>
+
+</div>
+
+
+{% endblock %}

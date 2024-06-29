@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('cart.static', filename='css/cart.css') }}">
+{% endblock %}
+{% block title %}
+    Cart page
+{% endblock %}
+
+{% block body %}
+
+    <div class="menu">
+        <a href="/home_user">HOME</a>
+        <a href="/shop">SHOP</a>
+        <a href="/cart" style="text-decoration: underline;">CART</a>
+        <p id="one">1</p>
+        <div class="number"></div>
+        <a href="/contacts">CONTACTS</a>
+    </div>
+    <div style="display: flex; width: 70%;">
+        <div id="main">
+            {% for product in products %}
+                <div class="product" id="256gb">
+                    <div class="product-cover" style="background-image: url( {{ url_for('shop.static', filename='img/Iphone.jpg') }} );"></div>
+                    <h1>{{ product.name }}</h1>
+                    <div style="display: flex; align-items: center; margin-left: 30px;">
+                        <button class="minus yellow-btn minus-count" id='{{ product.id }}'>-</button>
+                        <p class="product-count" id="-1">1</p>
+                        <button class="plus yellow-btn" id=" {{ product.id }} ">+</button>
+                        <h2 class="product-price" id="price-1">{{ product.price }} грн</h2>
+                    </div>
+                </div>
+            {% endfor %}
+            <!--<div class="product" id="512gb">
+                <div class="product-cover" style="background-image: url( {{ url_for('shop.static', filename='img/Iphone.jpg') }} );"></div>
+                <h1>iPhone 15 Pro Max 512GB Natural Titanium</h1>
+                <div style="display: flex; align-items: center; margin-left: 30px;">
+                    <button class="minus yellow-btn minus-count" id='2'>-</button>
+                    <p class="product-count" id="count-2">1</p>
+                    <button class="add-count-button yellow-btn plus" id="2">+</button>
+                    <h2 class="product-price" id="price-2">54999 грн</h2>
+                </div>
+            </div>
+            <div class="product" id="1tb">
+                <div class="product-cover" style="background-image: url( {{ url_for('shop.static', filename='img/Iphone.jpg') }} );"></div>
+                <h1>iPhone 15 Pro Max 1TB Natural Titanium</h1>
+                <div style="display: flex; align-items: center; margin-left: 30px;">
+                    <button class="remove-count-button minus yellow-btn minus-count" id='3'>-</button>
+                    <p class="product-count" id="count-3">1</p>
+                    <button class="add-count-button yellow-btn plus" id="3">+</button>
+                    <h2 class="product-price" id="price-3">66999 грн</h2>
+                </div>
+            </div>-->
+        </div>
+        <div id="sidebar">
+            <button id="purchase-button">Перейти до оформлення</button>
+            <div class="center"><p id="products-price-label" style="width: 250px;">0 товари на суму</p><span id="products-price">133997 грн</span></div>
+            <div class="center"><p>Знижка</p><span id="price-with-discount">133997 грн</span></div>
+            <div class="center"><p style="font-size: 22px; width: 290px;">Загальна сума</p><span id="all-price">133997 грн</span></div>
+        </div>
+    </div>
+
+    <div class="order" style="display: none;">
+        <form name="form-order" class="form-order">
+            <div class="center">
+                <p id="main-order">ОФОРМЛЕННЯ ЗАМОВЛЕННЯ</p>
+            </div>
+            <div class="second div" >
+                <div class="left">
+                    <p class="pip" id="name" name="name">ІМ'Я:</p>
+                </div>
+                <input class="input" type="text" name="name">
+                <div class="left">
+                    <p class="pip" id="surname">ПРІЗВИЩЕ:</p>
+                </div>
+                <input class="input" type="text" name="surname">
+                <div class="left">
+                    <p class="pip" id="phone">ТЕЛЕФОН ЗАМОВНИКА:</p>
+                </div>
+                <input class="input" type="text" name="phone">
+                <div class="left">
+                    <p class="pip" id="email">EMAIL ЗАМОВНИКА:</p>
+                </div>
+                <input class="input" type="text" name="email">
+                <div class="left">
+                    <p class="pip" id="city">МІСТО ОТРИМУВАЧА:</p>
+                </div>
+                <input class="input" type="text" name="city">
+                <div class="left">
+                    <p class="pip" id="department">ВІДДІЛЕННЯ НОВОЇ ПОШТИ:</p>
+                </div>
+                <input class="input" type="text" name="poshta">
+                <div class="left">
+                    <p class="pip" id="other-client" name="other-client">ДОДАТКОВІ ПОБАЖАННЯ:</p>
+                </div>
+                <textarea name="wishes" id="dodatkovi" cols="30" rows="10"></textarea>
+
+                <button name="send" class="send" id="send">SEND</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="{{ url_for('cart.static', filename='js/order.js') }}"></script>
+    <script src="{{ url_for('cart.static', filename='js/plus.js') }}"></script>
+    <script src="{{ url_for('cart.static', filename='js/minus.js') }}"></script>
+    <script src="{{ url_for('cart.static', filename='js/price.js') }}"></script>
+{% endblock %}

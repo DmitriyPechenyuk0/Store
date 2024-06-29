@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{{ url_for('registration.static', filename='css/page1.css') }}">
+{% endblock %}
+
+{% block title %}
+    Registration Page
+{% endblock %}
+
+
+{% block body %}
+
+<div id="message">
+    <div>
+        <p>CONFIRMED</p>
+        <img src="{{ url_for('registration.static', filename='img/arrow.jpg') }}">
+        <a href="/authorization">AUTHORIZATION</a>
+    </div>
+</div>
+
+
+<form method="post">
+    <h3>Login</h3>
+    <div class="center">
+        <input type="text" class="field" name="login">
+    </div>
+    <h3>Email</h3>
+    <div class="center">
+        <input type="email" class="field" name="email">
+    </div>
+    <h3>Password</h3>
+    <div class="center">
+        <input type="password" class="field" name="password">
+    </div>
+    <h3>Password confirmation</h3>
+    <div class="center">
+        <input type="password" class="field" name="password-confirm">
+    </div>
+    <div class="center">
+        <button id="login-confirm-button" type="submit">SEND</button>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('cart.static', filename='css/cart.css') }}">
+{% endblock %}
+{% block title %}
+    Cart page
+{% endblock %}
+
+{% block body %}
+<div class="menu">
+    <a href="/home_user">HOME</a>
+    <a href="/shop">SHOP</a>
+    <a href="/cart" style="text-decoration: underline;">CART</a>
+    <p id="one">1</p>
+    <div class="number"></div>
+    <a href="/contacts">CONTACTS</a>
+</div>
+<div class="center">
+    <div style="display: flex; width: 70%;">
+        <div>
+            <div id="main" style="height: 500px;">
+                <div class="center" style="text-align: center;">
+                    <h2 style="font-family: Arial, Helvetica, sans-serif;">Ваші дані у обробці 
+                        консультант зв’яжеться з вами для підтвердження замовлення</h2>
+                </div>
+                <div class="product" id="256gb">
+                    <div class="product-cover" style="background-image: url( {{ url_for('shop.static', filename='img/Iphone.jpg') }} );"></div>
+                    <h1>iPhone 15 Pro Max 256GB Natural Titanium</h1>
+                    <div style="display: flex; align-items: center; margin-left: 30px;">
+                        <p class="product-count" id="-1">1</p>
+                        <h2 class="product-price" id="price-1">49999 грн</h2>
+                    </div>
+                </div>
+                <div class="product" id="512gb">
+                    <div class="product-cover" style="background-image: url( {{ url_for('shop.static', filename='img/Iphone.jpg') }} );"></div>
+                    <h1>iPhone 15 Pro Max 512GB Natural Titanium</h1>
+                    <div style="display: flex; align-items: center; margin-left: 30px;">
+                        <p class="product-count" id="count-2">1</p>
+                        <h2 class="product-price" id="price-2">54999 грн</h2>
+                    </div>
+                </div>
+                <div class="product" id="1tb">
+                    <div class="product-cover" style="background-image: url( {{ url_for('shop.static', filename='img/Iphone.jpg') }} );"></div>
+                    <h1>iPhone 15 Pro Max 1TB Natural Titanium</h1>
+                    <div style="display: flex; align-items: center; margin-left: 30px;">
+                        <p class="product-count" id="count-3">1</p>
+                        <h2 class="product-price" id="price-3">66999 грн</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <h2>Загальна вартість замовлення: <span id="cost">1488</span> грн</h2>
+            </div>
+            <div class="center">
+                <form method="post">
+                    <button id="cancel-order" class="btn" type="submit">Відмінити замовлення</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

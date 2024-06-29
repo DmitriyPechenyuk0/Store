@@ -1,0 +1,397 @@
+body {
+    font-family: 'Inter';
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+}
+#change-image{
+    font-family: 'Inter';
+
+}
+.submit-change{
+    font-family: 'Inter';
+    text-decoration-style: under;
+}
+
+.input-data::-webkit-file-upload-button{
+    font-family: 'Inter';
+    font-weight: 700;
+    background-color: #D1D8DB;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 5px;
+}
+
+
+.input-data{
+    font-family: 'Inter';
+}
+
+.number{
+    position: absolute;
+    display: none;
+}
+h1{
+    font-size: 'Inter';
+}
+
+button{
+    font-family: 'Inter';
+}
+
+p{
+    font-family: 'Inter';
+}
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 64px;
+}
+
+.username {
+    position: absolute;
+    font-weight: bold;
+    right: 20px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    margin-left: 65px;
+    -webkit-user-drag: none;
+}
+
+a:focus {
+    
+    text-decoration: underline;
+}
+
+#addproduct {
+    float: right;
+    font-size: 19px;
+    font-family: 'Inter';
+    font-weight: bold;
+    background-color: transparent;
+    background-position: 190px;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    padding-right: 55px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    margin: 10px 0;
+    margin-right: 42px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+#addproduct:hover {
+    transform: scale(1.03, 1.03);
+}
+
+#main {
+    width: 100%;
+    height: 94%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#main::-webkit-scrollbar {
+    width: 0px;
+}
+
+.product {
+    position: relative;
+    display: flex;
+    position: relative;
+    width: 94%;
+    height: 360px;
+    padding-left: 40px;
+    border-right: 3px solid black;
+    margin-bottom: 30px;
+}
+
+.product-cover {
+    width: 210px;
+    height: 250px;
+    background-position: center;
+    background-size: 200px 250px;
+    background-repeat: no-repeat;
+}
+
+#hr {
+    width: 3px;
+    height: 100%;
+    background-color: black;
+    margin: 0 16px;
+}
+
+.product h1 {
+    font-size: 34px;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -10px;
+    font-family: 'Inter';
+}
+
+.discount {
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: -10px;
+    font-family: 'Inter';
+    margin: 10px 0px;
+    margin-bottom: 18px;
+}
+
+.product-price-with-discount {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: -10px;
+    font-family: 'Inter';
+}
+
+.product p {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.buy {
+    font-size: 16px;
+    font-weight: bold;
+    width: 140px;
+    height: 40px;
+    border: 2px solid black;
+    background-color: #EFCB4A;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.buy:focus + #one {
+    display: none;
+}
+
+.buy:hover {
+    transform: scale(1.05, 1.05);
+    background-color: #ffd950;
+    cursor: pointer;
+    box-shadow: 0px 5px 2px rgba(0, 0, 0, 0.4);
+}
+
+.product-size {
+    display: flex;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.product-size p {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 100px;
+    border: 1px solid black;
+    height: 10px;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+.product-is-avaliable {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 30px;
+    bottom: 1px;
+    user-select: none;
+}
+
+
+#one {
+    display: none;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #EFCB4A;
+    border-radius: 100px;
+    font-weight: bold;
+    padding: 5px;
+    border: 2px solid black;
+    width: 8px;
+    height: 8px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-button {
+    width: 30px;
+    height: 30px;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: all 0.3s;
+    margin: 10px;
+}
+
+.edit-button:hover {
+    transform: scale(0.9, 0.9);
+}
+
+.modal-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter';
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 100vh;
+}
+
+.modal-window form {
+    position: absolute;
+    left: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 340px;
+    background-color: white;
+    border-radius: 22px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.modal-window form p {
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 60px;
+}
+
+.modal-window form input {
+    font-size: 15px;
+    width: 85%;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 40px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.modal-window form button {
+    font-size: 18px;
+    text-decoration: underline;
+    text-decoration-style: under;
+    background-color: transparent;
+    border: none;
+    margin: 10px;
+    margin-left: 44%;
+}
+
+.modal-window form label {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #D1D8DB;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+.modal-window-new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter';
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 100vh;
+}
+.new-product{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    /* margin-left: ; */
+}
+.modal-window-new form {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 620px;
+    height: 1130px;
+    background-color: white;
+    border-radius: 22px;
+    border: 2px solid black;
+    /*transform: translate(70%, 70%);*/
+    /* margin: 0 auto; */
+}
+
+.modal-window-new form p {
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.modal-window-new form input {
+    font-size: 15px;
+    width: 85%;
+    height: 54px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 40px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.modal-window-new form textarea {
+    font-size: 15px;
+    width: 85%;
+    height: 54px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 40px;
+    margin-top: 10px;
+    outline: none;
+    resize: vertical;
+}
+
+.modal-window-new form button {
+    font-size: 18px;
+    text-decoration: underline;
+    text-decoration-style: under;
+    background-color: transparent;
+    border: none;
+    margin: 10px;
+    margin-left: 44%;
+    /* flex-direction: column; */
+}
+/* 
+.modal-window-new form label {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #D1D8DB;
+    border: 1px solid black;
+    border-radius: 12px;
+} */
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Regular.ttf');
+}
+
+/*new*/

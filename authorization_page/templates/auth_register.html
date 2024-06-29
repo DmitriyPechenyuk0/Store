@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{{ url_for('auth.static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block title %}
+    Registration Page
+{% endblock %}
+
+
+{% block body %}
+
+<div id="message">
+    <div>
+        <p>YOU ARE NOT REGISTERED</p>
+        <img src="{{ url_for('registration.static', filename='img/arrow.jpg') }}">
+        <a href="/registration">REGISTRATION</a>
+    </div>
+</div>
+
+
+<form method="post">
+    <h3>Login or email</h3>
+    <div class="center">
+        <input type="text" class="field" name="login">
+    </div>
+    <h3>Password</h3>
+    <div class="center">
+        <input type="password" class="field" name="password">
+    </div>
+    <div class="center">
+        <button id="login-confirm-button" type="submit">SEND</button>
+    </div>
+</form>
+
+{% endblock %}
