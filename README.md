@@ -1,9 +1,7 @@
 # Project name / Назва проекту: Shop<br/>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ваше_видео_id" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<br/>This is an electronic store where users can buy products / Це електронний магазин де користувачі можуть купить товари<br/> 
-<br/>The project supports and contributes to / Проект підтримує и вносить вклад:<br/>
+<br/>This is an electronic store where users can buy products / Це електронний магазин де користувачі можуть купити товари<br/> 
+<br/>The project supports and contributes to / Проект підтримує й вносить вклад:<br/>
 
 Dmytro Levkivskyi / Дмитро Левківський - https://github.com/Levkivskiydmitro<br/>
 Dmytro Pechenyuk / Дмитро Печенюк - https://github.com/DmitriyPechenyuk0<br/>
@@ -15,24 +13,24 @@ make an order and make a payment  /  це веб-додаток для упра�
 
 # Languages ​​used in this project / Мови які застосовувались у цьому проекті<br/>
 
-python 3.12.3 - The main language of the project, used for backend development / Основна мова проекту, використовується для backend розробки<br/>
-js 1.0 - It is used to create interactive website pages / Використовуєтся для создання інтерактивних сторінок сайту<br/>
-html 5 - It is used to create templates / Використовуєтся для створення шаблонів <br/>
-css 3 - It is used to work with styles / Використовуєтся для роботи зі стилями<br/>
+<b>python 3.12.3</b> - The main language of the project, used for backend development / Основна мова проекту, використовується для backend розробки<br/>
+<b>js 1.0</b> - It is used to create interactive website pages / Використовуєтся для создання інтерактивних сторінок сайту<br/>
+<b>html 5</b> - It is used to create templates / Використовуєтся для створення шаблонів <br/>
+<b>css 3</b> - It is used to work with styles / Використовуєтся для роботи зі стилями<br/>
 
 # Technologies used in this project / Технології які використовувались у цьому проекті<br/>
 
-flask 3.0.3 - Основний модуль на якому написан сайт<br/>
-flask_sqlalchemy 3.1.1 - Модуль для роботи з базою даних<br/>
-flask_migrate 4.0.7 - Модуль для ініціалізації бази даних<br/>
-flask_mail 0.10.0 - Для відправлення повідомлення на почту користувача<br/>
-flask_login 0.6.3 - Для реєстрації користувача на сайті<br/>
-os - Для роботи з системою<br/>
-telebot 0.0.5 - Для створення та налаштування телеграмм бота<br/>
-sqlite3 - Для роботи с базою данних<br/>
-Jinja2 3.1.3 -  Для створення шаблонів та блоків<br/>
-pandas 2.2.2 - Для читання та парсу даних з excel таблиці<br/>
-openpyxl 3.1.2 - Для коректного відкриття excel таблиці<br/>
+<b>flask 3.0.3</b> -  The main module on which the site is written / Основний модуль на якому написан сайт<br/>
+<b>flask_sqlalchemy 3.1.1</b> - A module for working with a database / Модуль для роботи з базою даних<br/>
+<b>flask_migrate 4.0.7</b> - Database initialization module / Модуль для ініціалізації бази даних<br/>
+<b>flask_mail 0.10.0</b> - Module for sending a message to the user's mail / Модуль для відправлення повідомлення на почту користувача<br/>
+<b>flask_login 0.6.3</b> - Для реєстрації користувача на сайті / Модуль для реєстрації користувача на сайті<br/>
+<b>os</b> - Module for working with the system / Модуль для роботи з системою<br/>
+<b>telebot 0.0.5</b> - Module for creating and configuring bot telegrams / Модуль Для створення та налаштування телеграмм бота<br/>
+<b>sqlite3</b> - A module for working with a database  / Модуль для роботи с базою данних<br/>
+<b>Jinja2 3.1.3</b> - A module for creating templates and blocks / Модуль для створення шаблонів та блоків<br/>
+<b>pandas 2.2.2</b> - Module for reading and parsing data from excel tables / Модуль для читання та парсу даних з excel таблиці<br/>
+<b>openpyxl 3.1.2</b> - Module for correct reading of excel tables / Модуль для коректного читання excel таблиці<br/>
 
 #  Project structure / Структура проекту:
 
@@ -220,7 +218,7 @@ def render_shop():
         return flask.render_template(template_name_or_list= "shop.html", login = login, products = products)
 ```
 
-### regiiiiiiistration:
+### registration:
 
 ```python
 import flask
